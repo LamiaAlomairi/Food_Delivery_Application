@@ -19,4 +19,9 @@ public class Rating {
 
     @Column(name = "rating")
     Integer rating;
+
+    @ManyToOne
+    private Order order;
+    @ManyToOne
+    private Restaurant restaurant;
 }
