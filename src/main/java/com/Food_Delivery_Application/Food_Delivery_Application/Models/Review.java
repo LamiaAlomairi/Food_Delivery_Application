@@ -20,8 +20,9 @@ public class Review {
     @Column(name = "comment")
     String comment;
 
-    @ManyToOne
-    private Order order;
+//    @ManyToOne
+//    private Order order;
+
     @ManyToOne
     private Restaurant restaurant;
 }

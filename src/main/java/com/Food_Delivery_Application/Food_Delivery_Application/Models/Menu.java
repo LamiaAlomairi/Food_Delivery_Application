@@ -25,4 +25,7 @@ public class Menu {
 
     @Column(name = "price")
     Double price;
+
+    @ManyToOne
+    private Restaurant restaurant;
 }

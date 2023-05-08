@@ -21,7 +21,8 @@ public class Rating {
     Integer rating;
 
     @ManyToOne
-    private Order order;
+    private Customer customer;
+
     @ManyToOne
     private Restaurant restaurant;
 }

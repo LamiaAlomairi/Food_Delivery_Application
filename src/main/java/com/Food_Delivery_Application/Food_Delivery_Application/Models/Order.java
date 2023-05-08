@@ -24,13 +24,15 @@ public class Order {
     @ManyToOne
     private Restaurant restaurant;
 
+//    @ManyToMany
+//    @JsonIgnore
+//    private List<Menu> menuItems;
+
     @ManyToMany
     @JsonIgnore
-    private List<Menu> menuItems;
+    private List<Delivery> deliveries;
 
-    @OneToOne
-    private Delivery delivery;
-
-    @OneToOne
-    private Payment payment;
+    @ManyToMany
+    @JsonIgnore
+    private List<Payment> payments;
 }

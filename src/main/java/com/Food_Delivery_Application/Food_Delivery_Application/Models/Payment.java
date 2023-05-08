@@ -1,10 +1,12 @@
 package com.Food_Delivery_Application.Food_Delivery_Application.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,4 +24,8 @@ public class Payment {
 
     @Column(name = "amount")
     Double amount;
+
+    @ManyToMany
+    @JsonIgnore
+    private List<Order> orders;
 }

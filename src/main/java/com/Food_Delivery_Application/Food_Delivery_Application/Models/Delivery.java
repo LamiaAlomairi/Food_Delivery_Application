@@ -1,5 +1,6 @@
 package com.Food_Delivery_Application.Food_Delivery_Application.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,4 +30,7 @@ public class Delivery {
     @Column(name = "estimatedDeliveryTime")
     String estimatedDeliveryTime;
 
+    @ManyToMany(mappedBy = "delivery")
+    @JsonIgnore
+    private List<Order> orders;
 }
