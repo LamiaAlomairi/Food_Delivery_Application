@@ -30,7 +30,7 @@ public class Delivery {
     @Column(name = "estimatedDeliveryTime")
     String estimatedDeliveryTime;
 
-    @ManyToMany(mappedBy = "delivery")
+    @OneToMany(mappedBy = "delivery")
     @JsonIgnore
     private List<Order> orders;
 }

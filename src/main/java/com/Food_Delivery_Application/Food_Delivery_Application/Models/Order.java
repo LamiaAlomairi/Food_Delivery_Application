@@ -11,28 +11,32 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
-@Table(name = "Order")
+@Table(name = "customer_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     Integer order_id;
 
+
     @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
     private Restaurant restaurant;
 
-//    @ManyToMany
-//    @JsonIgnore
-//    private List<Menu> menuItems;
-
-    @ManyToMany
-    @JsonIgnore
-    private List<Delivery> deliveries;
+////    @ManyToMany
+////    @JsonIgnore
+////    private List<Menu> menuItems;
+//
+    @ManyToOne
+    @JoinColumn(name = "delivery_id", referencedColumnName = "delivery_id")
+    private Delivery delivery;
 
     @ManyToMany
     @JsonIgnore
     private List<Payment> payments;
+
 }

@@ -27,9 +27,9 @@ public class Restaurant {
     @Column(name = "restaurant_phone_number")
     Integer restaurant_number;
 
-    @OneToMany(mappedBy = "restaurant")
-    @JsonIgnore
-    private List<Customer> customers;
+//    @OneToMany(mappedBy = "restaurant")
+//    @JsonIgnore
+//    private List<Customer> customers;
 
     @OneToMany(mappedBy = "restaurant")
     @JsonIgnore
@@ -48,5 +48,6 @@ public class Restaurant {
     private List<Order> orders;
 
     @ManyToOne
+    @JoinColumn(name = "id", referencedColumnName = "id")
     private Promotion promotion;
 }

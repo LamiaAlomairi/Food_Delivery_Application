@@ -30,6 +30,10 @@ public class Customer {
     @Column(name = "customer_email")
     String customer_email;
 
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
+    private Restaurant restaurant;
+
     @OneToMany(mappedBy = "customer")
     @JsonIgnore
     private List<Order> orders;
@@ -41,7 +45,4 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     @JsonIgnore
     private List<Review> reviews;
-
-    @ManyToOne
-    private Restaurant restaurant;
 }

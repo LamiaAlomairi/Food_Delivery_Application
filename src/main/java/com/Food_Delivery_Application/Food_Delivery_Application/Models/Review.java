@@ -20,9 +20,14 @@ public class Review {
     @Column(name = "comment")
     String comment;
 
-//    @ManyToOne
-//    private Order order;
+    @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+    private Customer customer;
+
+////    @ManyToOne
+////    private Order order;
 
     @ManyToOne
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
     private Restaurant restaurant;
 }

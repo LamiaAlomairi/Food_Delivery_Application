@@ -21,8 +21,10 @@ public class Rating {
     Integer rating;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
     private Restaurant restaurant;
 }

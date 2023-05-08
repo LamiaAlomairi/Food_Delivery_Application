@@ -3,7 +3,6 @@ package com.Food_Delivery_Application.Food_Delivery_Application.Models;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.*;
 import javax.persistence.*;
 
 @Getter
@@ -27,5 +26,6 @@ public class Menu {
     Double price;
 
     @ManyToOne
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
     private Restaurant restaurant;
 }
