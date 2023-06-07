@@ -1,7 +1,7 @@
 package com.Food_Delivery_Application.Food_Delivery_Application.Controllers;
 
 import com.Food_Delivery_Application.Food_Delivery_Application.Models.Promotion;
-import com.Food_Delivery_Application.Food_Delivery_Application.Services.Promotion_Service;
+import com.Food_Delivery_Application.Food_Delivery_Application.Services.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,18 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "promotion")
-public class Promotion_Controller {
+public class PromotionController {
     //    http://localhost:8080/promotion/getAll
     @Autowired
-    Promotion_Service promotion_service;
+    PromotionService promotionService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Promotion> getAllPromotions() {
 
-        return promotion_service.getAllPromotions();
+        return promotionService.getAllPromotions();
     }
     @GetMapping(value = "getById")
     public Promotion getPromotionById(@RequestParam Integer id) {
 
-        return promotion_service.getPromotionById(id);
+        return promotionService.getPromotionById(id);
     }
 }

@@ -16,13 +16,9 @@ import java.util.List;
 public class Promotion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     Integer id;
 
-    @Column(name = "code")
     String code;
-
-    @Column(name = "discount")
     Double discount;
 
     @OneToMany(mappedBy = "promotion")

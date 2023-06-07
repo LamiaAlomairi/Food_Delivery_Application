@@ -13,19 +13,15 @@ import javax.persistence.*;
 public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "item_id")
-    Integer item_id;
+    Integer id;
 
-    @Column(name = "item_name")
-    String item_name;
+    String name;
 
-    @Column(name = "item_description")
-    String item_description;
+    String description;
 
-    @Column(name = "price")
     Double price;
 
     @ManyToOne
-    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
     private Restaurant restaurant;
 }

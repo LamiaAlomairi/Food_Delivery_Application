@@ -1,7 +1,7 @@
 package com.Food_Delivery_Application.Food_Delivery_Application.Controllers;
 
 import com.Food_Delivery_Application.Food_Delivery_Application.Models.*;
-import com.Food_Delivery_Application.Food_Delivery_Application.Services.Order_Service;
+import com.Food_Delivery_Application.Food_Delivery_Application.Services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,19 +9,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "order")
-public class Order_Controller {
+public class OrderController {
     //    http://localhost:8080/order/getAll
     @Autowired
-    Order_Service order_service;
+    OrderService orderService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Order> getAllOrders() {
 
-        return order_service.getAllOrders();
+        return orderService.getAllOrders();
     }
     @GetMapping(value = "getById")
     public Order getOrderById(@RequestParam Integer id) {
 
-        return order_service.getOrderById(id);
+        return orderService.getOrderById(id);
     }
 
 

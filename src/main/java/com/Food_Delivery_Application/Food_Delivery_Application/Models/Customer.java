@@ -15,23 +15,15 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
-    Integer customer_id;
+    Integer id;
 
-    @Column(name = "customer_name")
-    String customer_name;
-
-    @Column(name = "customer_address")
-    String customer_address;
-
-    @Column(name = "customer_phone_number")
-    Integer customer_number;
-
-    @Column(name = "customer_email")
-    String customer_email;
+    String name;
+    String address;
+    String phoneNumber;
+    String email;
 
     @ManyToOne
-    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
     private Restaurant restaurant;
 
     @OneToMany(mappedBy = "customer")

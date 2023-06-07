@@ -1,23 +1,23 @@
 package com.Food_Delivery_Application.Food_Delivery_Application.Services;
 
 import com.Food_Delivery_Application.Food_Delivery_Application.Models.Payment;
-import com.Food_Delivery_Application.Food_Delivery_Application.Repositories.Payment_Repository;
+import com.Food_Delivery_Application.Food_Delivery_Application.Repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class Payment_Service {
+public class PaymentService {
     @Autowired
-    Payment_Repository payment_repository;
+    PaymentRepository paymentRepository;
     public List<Payment> getAllPayments() {
 
-        return payment_repository.findAll();
+        return paymentRepository.findAll();
     }
 
     public Payment getPaymentById(Integer id) {
 
-        return payment_repository.findById(id).get();
+        return paymentRepository.findById(id).get();
     }
 }

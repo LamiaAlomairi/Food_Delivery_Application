@@ -26,6 +26,6 @@ public class Payment {
     Double amount;
 
     @ManyToMany
-    @JsonIgnore
+    @JoinTable(name = "payment_order", joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "payment_id"))
     private List<Order> orders;
 }

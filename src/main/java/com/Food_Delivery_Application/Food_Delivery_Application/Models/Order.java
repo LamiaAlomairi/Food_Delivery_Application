@@ -15,24 +15,19 @@ import javax.persistence.*;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_id")
-    Integer order_id;
+    Integer id;
 
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "restaurant_id", referencedColumnName = "restaurant_id")
+    @JoinColumn(name = "restaurant_id", referencedColumnName = "id")
     private Restaurant restaurant;
 
-////    @ManyToMany
-////    @JsonIgnore
-////    private List<Menu> menuItems;
-//
     @ManyToOne
-    @JoinColumn(name = "delivery_id", referencedColumnName = "delivery_id")
+    @JoinColumn(name = "delivery_id", referencedColumnName = "id")
     private Delivery delivery;
 
     @ManyToMany

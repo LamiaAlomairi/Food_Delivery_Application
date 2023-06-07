@@ -1,23 +1,23 @@
 package com.Food_Delivery_Application.Food_Delivery_Application.Services;
 
 import com.Food_Delivery_Application.Food_Delivery_Application.Models.Restaurant;
-import com.Food_Delivery_Application.Food_Delivery_Application.Repositories.Restaurant_Repository;
+import com.Food_Delivery_Application.Food_Delivery_Application.Repositories.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class Restaurant_Service {
+public class RestaurantService {
     @Autowired
-    Restaurant_Repository restaurant_repository;
+    RestaurantRepository restaurantRepository;
     public List<Restaurant> getAllRestaurants() {
 
-        return restaurant_repository.findAll();
+        return restaurantRepository.findAll();
     }
 
     public Restaurant getRestaurantById(Integer id) {
 
-        return restaurant_repository.findById(id).get();
+        return restaurantRepository.findById(id).get();
     }
 }

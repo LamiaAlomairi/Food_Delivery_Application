@@ -15,21 +15,12 @@ import javax.persistence.*;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "restaurant_id")
-    Integer restaurant_id;
+    Integer id;
 
-    @Column(name = "restaurant_name")
-    String restaurant_name;
+    String name;
+    String location;
 
-    @Column(name = "restaurant_location")
-    String restaurant_location;
-
-    @Column(name = "restaurant_phone_number")
-    Integer restaurant_number;
-
-//    @OneToMany(mappedBy = "restaurant")
-//    @JsonIgnore
-//    private List<Customer> customers;
+    Integer phoneNumber;
 
     @OneToMany(mappedBy = "restaurant")
     @JsonIgnore
@@ -48,6 +39,6 @@ public class Restaurant {
     private List<Order> orders;
 
     @ManyToOne
-    @JoinColumn(name = "id", referencedColumnName = "id")
+    @JoinColumn(name = "promotion_id", referencedColumnName = "id")
     private Promotion promotion;
 }

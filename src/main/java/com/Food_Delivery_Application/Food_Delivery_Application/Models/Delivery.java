@@ -15,19 +15,14 @@ import javax.persistence.*;
 public class Delivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "delivery_id")
-    Integer delivery_id;
+    Integer id;
 
-    @Column(name = "delivery_person_name")
-    String delivery_person_name;
+    String name;
 
-    @Column(name = "delivery_address")
-    String delivery_address;
+    String address;
 
-    @Column(name = "delivery_person_number")
-    Integer delivery_person_number;
+    Integer phoneNumber;
 
-    @Column(name = "estimatedDeliveryTime")
     String estimatedDeliveryTime;
 
     @OneToMany(mappedBy = "delivery")
